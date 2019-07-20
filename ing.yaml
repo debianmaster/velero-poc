@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1 
+kind: Ingress
+metadata:
+  name: velero-ingress
+  namespace: velero
+spec:
+  rules:
+  - host: minio.cloud.run9.io
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: minio
+          servicePort: 9000

@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    control-plane.alpha.kubernetes.io/leader: '{"holderIdentity":"71b85aed-a8a1-11e9-9ceb-aaf875501bff","leaseDurationSeconds":15,"acquireTime":"2019-07-20T12:54:15Z","renewTime":"2019-07-20T12:55:19Z","leaderTransitions":0}'
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"PersistentVolumeClaim","metadata":{"annotations":{},"labels":{"app":"nginx"},"name":"nginx-logs","namespace":"nginx-example"},"spec":{"accessModes":["ReadWriteOnce"],"resources":{"requests":{"storage":"50Mi"}}}}
+  creationTimestamp: null
+  finalizers:
+  - kubernetes.io/pvc-protection
+  labels:
+    app: nginx
+    velero.io/backup-name: nginx-backup1
+    velero.io/restore-name: nginx-backup1-20190720181821
+  name: nginx-logs
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Mi
+  storageClassName: nfs-p-8scd8-nfs-provisioner
+  volumeMode: Filesystem
+status: {}
