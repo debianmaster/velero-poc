@@ -5,7 +5,7 @@ metadata:
   namespace: velero
 spec:
   rules:
-  - host: minio.cloud.run9.io
+  - host: minio.cloud.example.io
     http:
       paths:
       - path: /
